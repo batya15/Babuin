@@ -1,0 +1,31 @@
+{
+  "name": "bElements admin",
+  "version": "1.0.0",
+  "authors": [
+    "'Batyr <batya.char@gmail.com>"
+  ],
+  "description": "Cold Control admin",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "requirejs": "~2.1.15",
+    "backbone": "~1.1.2",
+    "require-css": "~0.1.8",
+    "jade": "~1.8.1"
+  },
+  "overrides": {
+    "socket.io-client": {
+      "main": "socket.io.js"
+    },
+    "jade": {
+      "main": "runtime.js"
+    }
+  }
+}
