@@ -3,6 +3,12 @@ var install = require('gulp-install');
 var config = require('./gulp/config.json');
 
 
+
+//Скачивание всех зависимостей
+function installModules() {
+    return gulp.src([config.modules.bower])
+        .pipe(install());
+}
 //Копирование главных файлов BOWER в папку vendor
 require('./gulp/bower')(gulp);
 require('./gulp/jsHint')(gulp);
@@ -11,4 +17,4 @@ require('./gulp/clean')('clean', gulp, [config.path.build], config.path.src);
 //Удаление папки билда и всех зависимостей npm и bower
 require('./gulp/clean')('cleanHard', gulp, [config.path.build, config.path.bower_components, config.path.vendor_js, config.path.release], config.path.src);
 
-gulp.task('default', gulp.series('clean'));
+gulp.task('default', gulp.series('clean', installModules));

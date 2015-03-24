@@ -8,25 +8,25 @@ module.exports = function(gulp, paths, src) {
     function bowerJs() {
         var filter = gulpFilter('*.js');
         return gulp
-            .src(mainBowerFiles({paths: config.path.staticSrc}))
+            .src(mainBowerFiles({paths: config.path.src}))
             .pipe(filter)
-            .pipe(gulp.dest(config.path.staticSrc + '/vendor/js'));
+            .pipe(gulp.dest(config.path.src + '/vendor/js'));
     }
 
     function bowerCss() {
         var filter = gulpFilter('*.css');
         return gulp
-            .src(mainBowerFiles({paths: config.path.staticSrc}))
+            .src(mainBowerFiles({paths: config.path.src}))
             .pipe(filter)
-            .pipe(gulp.dest(config.path.staticSrc + '/vendor/css'));
+            .pipe(gulp.dest(config.path.src + '/vendor/css'));
     }
 
     function bowerFonts() {
         var filter = gulpFilter(['*.eot', '*.svg', '*.ttf', '*.woff', '*.woff2']); 
         return gulp
-            .src(mainBowerFiles({paths: config.path.staticSrc}))
+            .src(mainBowerFiles({paths: config.path.src}))
             .pipe(filter)
-            .pipe(gulp.dest(config.path.staticSrc + '/vendor/fonts'));
+            .pipe(gulp.dest(config.path.src + '/vendor/fonts'));
     }
 
     return gulp.task('bower', gulp.series(bowerJs, bowerCss, bowerFonts));
