@@ -1,38 +1,39 @@
 {
   "path": {
     "src": "src",
-    "jsHint": ["src/static/**/*.js", "!**/bower_components/**", "!**/vendor/**", "!**/qunit.js"],
-    "scssFiles": ["src/static/**/*.scss", "!**/bower_components/**"],
-    "jadeFiles": ["src/static/**/*.jade", "!**/bower_components/**", "!**/*.html.jade"],
-    "jadeHtmlFiles": ["src/static/**/*.html.jade", "!**/bower_components/**"],
-    "staticSrc": "src",
-    "distStaticAdmin": "build/static/admin",
     "build": "build",
     "release": "release",
+    "temp": "temp",
+    "jsHint": ["src/**/*.js", "!**/bower_components/**", "!**/vendor/**", "!**/qunit.js"],
     "bower_components": "src/bower_components",
-    "vendor_js": "src/vendor"
+    "vendor_js": "src/vendor",
+    "scssFiles": ["src/**/*.{scss,sass}", "!**/bower_components/**"],
+    "jadeHtmlFiles": ["src/**/*.html.jade", "!**/bower_components/**"],
+    "jadeFiles": ["src/**/*.jade", "!**/bower_components/**", "!**/*.html.jade"]
   },
-  "modules" : {
-    "bower": "src/bower.json"
-  },
+  "bower": "src/bower.json",
+
   "staticFiles": [
-    "src/static/**/*.{css,scss}",
-    "src/static/**/*.js",
-    "src/static/**/*.html",
-    "src/static/**/*.svg",
-    "src/static/**/*.gif",
-    "src/static/**/*.{jpg,jpeg}",
-    "src/static/**/*.{ttf,woff,eot}*",
-    "src/static/**/*.png",
+    "src/**/*.{css,scss,sass}",
+    "src/**/*.js",
+    "src/**/*.html",
+    "src/**/*.svg",
+    "src/**/*.gif",
+    "src/**/*.{jpg,jpeg}",
+    "src/**/*.{ttf,woff,eot}*",
+    "src/**/*.png",
     "!**/bower_components/**"
   ],
+
   "staticRelease": [
-    "build/static/**/*.svg",
-    "build/static/**/*.gif",
-    "build/static/**/*.{jpg,jpeg}",
-    "build/static/**/*.{ttf,woff,eot}*",
-    "build/static/**/*.png",
+    "build/**/*.svg",
+    "build/**/*.gif",
+    "build/**/*.json",
+    "build/**/*.{jpg,jpeg}",
+    "build/**/*.{ttf,woff,eot}*",
+    "build/**/*.png",
     "!**/test/**"
   ],
-  "gzipFiles": "**/*.{js,html,svg,css,ttf,woff,eot}*"
+
+  "gzipFiles": "**/*.{js,html,svg,css,ttf,woff,eot,json}*"
 }

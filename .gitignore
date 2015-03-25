@@ -3,3 +3,5 @@ src/bower_components
 src/vendor
 build
 node_modules
+release
+temp

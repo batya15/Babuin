@@ -1,11 +1,18 @@
 doctype html
 html(lang="en")
     head
-        title Тестовая страница
+        meta(charset='UTF-8')
+        title= build + ' Главная страница'
+        if (build == 'prod')
+            script(data-main="main" src="/main.js")
+            link(rel='stylesheet', href='/styles.css')
+        else
+            script(data-main="main" src="/vendor/js/require.js")
+            script(src="/require-config.js")
+            link(rel='stylesheet', href='/vendor/css/normalize.css')
+            link(rel='stylesheet', href='/vendor/css/bootstrap.css')
+            link(rel='stylesheet', href='/styles/main.css')
     body
-        h1 Jade - node template engine
-        #container.col
-            p.
                 Jade is a terse and simple
                 templating language with a
                 strong focus on performance
