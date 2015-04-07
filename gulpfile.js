@@ -236,6 +236,6 @@ gulp.task('development', gulp.series('clean', installModules, 'bower',
     'jsHint', gulp.parallel(copyStaticClientFiles, compileStyle, compileStaticTemplates, compileTemplates)));
 
 
-gulp.task('default', gulp.series('development'), registerWatchers);
+gulp.task('default', gulp.series('development', registerWatchers));
 gulp.task('release', gulp.series(setBuild, 'development',
     gulp.parallel(cssMinConcat, jsMin, htmlMin, copyStaticFileRelease), concatRjs, concatAllJs, gzipTask));
